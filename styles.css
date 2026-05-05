@@ -1,0 +1,203 @@
+/* Glass morphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.text-gradient {
+    background: linear-gradient(to right, #60a5fa, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Animated orbs */
+.orb {
+    animation: float 8s ease-in-out infinite;
+}
+
+.orb-1 {
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, 30px);
+    }
+    50% {
+        transform: translate(0, 60px);
+    }
+    75% {
+        transform: translate(-50px, 30px);
+    }
+}
+
+/* Ring animations */
+.ring {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.ring-1 {
+    animation: spin 20s linear infinite;
+}
+
+.ring-2 {
+    animation: spin-reverse 15s linear infinite;
+}
+
+.ring-3 {
+    animation: spin 25s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* Ring dots */
+.ring::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #3b82f6;
+}
+
+.ring-1::before {
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ring-2::before {
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #a855f7;
+}
+
+/* Skill bars animation */
+.skill-bar {
+    width: 0;
+    transition: width 1s ease-out;
+}
+
+.skill-bar.animate {
+    width: var(--width);
+}
+
+/* Scroll animations */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Stagger delays */
+[data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos-delay="200"] { transition-delay: 0.2s; }
+[data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos-delay="400"] { transition-delay: 0.4s; }
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar scroll effect */
+#navbar.scrolled {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#navbar.scrolled nav {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile menu */
+#mobileMenu.hidden {
+    display: none;
+}
+
+/* Form focus states */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Button hover effects */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Selection color */
+::selection {
+    background: rgba(59, 130, 246, 0.3);
+    color: white;
+}
