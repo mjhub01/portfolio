@@ -64,15 +64,14 @@ const animateSkillBars = () => {
     });
 };
 
-// AOS-like scroll animations
-const aosElements = document.querySelectorAll('[data-aos]');
-
+// AOS-like scroll animations - trigger when element enters viewport from bottom
 const animateOnScroll = () => {
-    aosElements.forEach(el => {
+    document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(el => {
         const rect = el.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight - 100;
+        // Trigger when element top is 150px above viewport bottom
+        const triggerPoint = window.innerHeight - 150;
         
-        if (isVisible) {
+        if (rect.top < triggerPoint && rect.bottom > 0) {
             el.classList.add('aos-animate');
         }
     });
@@ -80,11 +79,14 @@ const animateOnScroll = () => {
     animateSkillBars();
 };
 
-// Initial animation check
+// Run on load for elements already in view
 animateOnScroll();
 
 // Scroll event listener
 window.addEventListener('scroll', { passive: true }, animateOnScroll);
+
+// Also check on resize
+window.addEventListener('resize', { passive: true }, animateOnScroll);
 
 // Contact form handling
 document.getElementById('contactForm').addEventListener('submit', (e) => {
