@@ -1,19 +1,6 @@
 // Set current year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Make all content visible immediately
-document.querySelectorAll('[data-aos]').forEach(el => {
-    el.classList.add('aos-animate');
-});
-
-// Set skill bar widths immediately
-document.querySelectorAll('.skill-bar').forEach(bar => {
-    const width = bar.getAttribute('data-width');
-    if (width) {
-        bar.style.width = width;
-    }
-});
-
 // Mobile menu toggle
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -33,7 +20,7 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', { passive: true }, () => {
     const currentScroll = window.scrollY;
     
     if (currentScroll > 50) {
@@ -43,7 +30,44 @@ window.addEventListener('scroll', () => {
     }
     
     lastScroll = currentScroll;
-}, { passive: true });
+});
+
+// Animate skill bars on scroll
+const skillBars = document.querySelectorAll('.skill-bar');
+
+const animateSkillBars = () => {
+    skillBars.forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width;
+        }
+    });
+};
+
+// AOS-like scroll animations
+const aosElements = document.querySelectorAll('[data-aos]');
+
+const animateOnScroll = () => {
+    aosElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100;
+        
+        if (isVisible) {
+            el.classList.add('aos-animate');
+        }
+    });
+    
+    animateSkillBars();
+};
+
+// Initial animation check
+animateOnScroll();
+
+// Scroll event listener
+window.addEventListener('scroll', { passive: true }, animateOnScroll);
 
 // Contact form handling
 document.getElementById('contactForm').addEventListener('submit', (e) => {
