@@ -1,6 +1,23 @@
 // Set current year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Make above-the-fold content visible immediately
+document.querySelectorAll('[data-aos]').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+        el.classList.add('aos-animate');
+    }
+});
+
+// Set skill bar widths for visible elements
+document.querySelectorAll('.skill-bar').forEach(bar => {
+    const rect = bar.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const width = bar.getAttribute('data-width');
+        if (width) bar.style.width = width;
+    }
+});
+
 // Mobile menu toggle
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
