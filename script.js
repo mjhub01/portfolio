@@ -1,21 +1,14 @@
 // Set current year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Make above-the-fold content visible immediately
-document.querySelectorAll('[data-aos]').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-        el.classList.add('aos-animate');
-    }
-});
-
-// Set skill bar widths for visible elements
-document.querySelectorAll('.skill-bar').forEach(bar => {
-    const rect = bar.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-        const width = bar.getAttribute('data-width');
-        if (width) bar.style.width = width;
-    }
+// Make elements already in viewport visible immediately on load
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-aos]').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('aos-animate');
+        }
+    });
 });
 
 // Mobile menu toggle
@@ -49,44 +42,42 @@ window.addEventListener('scroll', { passive: true }, () => {
     lastScroll = currentScroll;
 });
 
-// Animate skill bars on scroll
-const skillBars = document.querySelectorAll('.skill-bar');
+// AOS-like scroll animations using IntersectionObserver for reliability
+const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -100px 0px', // Trigger 100px before element enters viewport
+    threshold: 0.1
+};
 
-const animateSkillBars = () => {
-    skillBars.forEach(bar => {
-        const rect = bar.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-        
-        if (isVisible) {
-            const width = bar.getAttribute('data-width');
-            bar.style.width = width;
+const animateOnScroll = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+            observer.unobserve(entry.target); // Only animate once
         }
     });
 };
 
-// AOS-like scroll animations - trigger when element enters viewport from bottom
-const animateOnScroll = () => {
-    document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        // Trigger when element top is 150px above viewport bottom
-        const triggerPoint = window.innerHeight - 150;
-        
-        if (rect.top < triggerPoint && rect.bottom > 0) {
-            el.classList.add('aos-animate');
+const scrollObserver = new IntersectionObserver(animateOnScroll, observerOptions);
+
+// Observe all animated elements
+document.querySelectorAll('[data-aos]').forEach(el => {
+    scrollObserver.observe(el);
+});
+
+// Handle skill bars separately with their own observer
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const width = entry.target.getAttribute('data-width');
+            if (width) entry.target.style.width = width;
         }
     });
-    
-    animateSkillBars();
-};
+}, { threshold: 0.5 });
 
-// Run on load for elements already in view
-animateOnScroll();
-
-// Scroll event listener
-window.addEventListener('scroll', { passive: true }, animateOnScroll);
-
-// Also check on resize
-window.addEventListener('resize', { passive: true }, animateOnScroll);
+document.querySelectorAll('.skill-bar').forEach(bar => {
+    skillObserver.observe(bar);
+});
 
 // Contact form handling
 document.getElementById('contactForm').addEventListener('submit', (e) => {
