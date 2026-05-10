@@ -110,12 +110,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add hover effects to project cards
-document.querySelectorAll('#projects .glass').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-5px)';
+// Navbar active link highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
     });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
+    navLinks.forEach(l => {
+        l.style.color = l.getAttribute('href') === '#' + current ? '#4ade80' : '';
     });
-});
+}, { passive: true });
