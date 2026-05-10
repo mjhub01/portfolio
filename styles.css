@@ -1,3 +1,17 @@
+/* Brand logo */
+.brand-logo {
+    height: 44px;
+    width: auto;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 4px 8px;
+    transition: background 0.3s;
+}
+
+.brand-logo:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
 /* Glass morphism effect */
 .glass {
     background: rgba(255, 255, 255, 0.05);
