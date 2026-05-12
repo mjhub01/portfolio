@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#020c06"/>
+  <rect x="1" y="1" width="398" height="198" rx="8" fill="none" stroke="rgba(168,85,247,0.2)" stroke-width="2"/>
+  <text x="200" y="85" text-anchor="middle" fill="#c084fc" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700">ANDROID & FIREBASE</text>
+  <text x="200" y="115" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="0.1em">PLACEHOLDER THUMBNAIL</text>
+  <line x1="160" y1="130" x2="240" y2="130" stroke="rgba(168,85,247,0.3)" stroke-width="1"/>
+</svg>

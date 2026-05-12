@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mar June Gabon | IT Developer & AI Specialist</title>
     <link rel="icon" type="image/png" href="images/brand.png">
+    <meta name="description" content="Full-stack IT developer, AI specialist, and part-time instructor from Samar, Philippines. Building intelligent web systems, mobile apps, and research technology solutions.">
+    <meta name="author" content="Mar June Gabon">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#020c06">
+    <link rel="canonical" href="https://mjhub01.github.io/portfolio/">
+    <link rel="preload" href="images/brand.png" as="image">
+    <link rel="preload" href="images/profile.jpg" as="image">
+    <link rel="preload" href="styles.css" as="style">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mar June Gabon | IT Developer & AI Specialist">
+    <meta property="og:description" content="Full-stack IT developer, AI specialist, and part-time instructor from Samar, Philippines. Building intelligent web systems, mobile apps, and research technology solutions.">
+    <meta property="og:image" content="https://mjhub01.github.io/portfolio/images/profile.jpg">
+    <meta property="og:url" content="https://mjhub01.github.io/portfolio/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mar June Gabon | IT Developer & AI Specialist">
+    <meta name="twitter:description" content="Full-stack IT developer, AI specialist, and part-time instructor from Samar, Philippines.">
+    <meta name="twitter:image" content="https://mjhub01.github.io/portfolio/images/profile.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -20,8 +41,44 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Analytics — Add your tracking script here -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script> -->
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mar June Gabon",
+      "url": "https://mjhub01.github.io/portfolio/",
+      "image": "https://mjhub01.github.io/portfolio/images/profile.jpg",
+      "jobTitle": "IT Developer & AI Specialist",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Samar State University",
+        "department": "Center for Lifelong Learning (CeLL)"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Samar State University"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Catbalogan City",
+        "addressRegion": "Samar",
+        "postalCode": "6700",
+        "addressCountry": "PH"
+      },
+      "sameAs": [
+        "https://github.com/mjhub01",
+        "https://www.facebook.com/jrami0197/",
+        "https://www.instagram.com/jrami.97/"
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased overflow-x-hidden">
+    <a href="#about" class="skip-link">Skip to content</a>
 
     <!-- Scan line -->
     <div class="scan-line"></div>
@@ -37,12 +94,13 @@
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav class="flex items-center justify-between px-6 py-3 rounded-lg transition-all duration-300">
-                <a href="#"><img src="images/brand.png" alt="MJG" class="brand-logo"></a>
+                <a href="#"><img src="images/brand.png" alt="MJG Dev brand logo" class="brand-logo"></a>
                 <ul class="hidden md:flex items-center gap-8">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="services.html" class="nav-link" style="color:#22d3ee;">Services</a></li>
                     <li><a href="#contact" class="btn-talk">[ Hire Me ]</a></li>
                 </ul>
                 <button id="menuBtn" class="md:hidden p-2 text-green-400 border border-green-500/30 rounded" aria-label="Toggle menu">
@@ -56,6 +114,7 @@
                 <a href="#skills" class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:text-green-400 rounded transition-all" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;"><span style="color:#166534;">02.</span> Skills</a>
                 <a href="#projects" class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:text-green-400 rounded transition-all" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;"><span style="color:#166534;">03.</span> Projects</a>
                 <a href="#contact" class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:text-green-400 rounded transition-all" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;"><span style="color:#166534;">04.</span> Contact</a>
+                <a href="services.html" class="flex items-center gap-3 px-4 py-3 rounded transition-all" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:#22d3ee;"><span style="color:#0e7490;">05.</span> Services</a>
             </div>
         </div>
     </header>
@@ -93,6 +152,10 @@
                     <div class="flex flex-wrap gap-4 mb-10">
                         <a href="#projects" class="btn-primary">View Projects</a>
                         <a href="#contact" class="btn-outline">Get In Touch</a>
+                        <a href="#" class="btn-outline" download style="border-color:rgba(34,197,94,0.3);color:#4ade80;display:inline-flex;align-items:center;gap:0.4rem;" title="Add your CV file path">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Download CV
+                        </a>
                     </div>
 
                     <div class="flex items-center gap-3">
@@ -116,7 +179,7 @@
                 <div class="hidden lg:flex flex-col items-center gap-6 relative" data-aos="fade-left" data-aos-delay="200">
                     <div class="profile-ring-outer">
                         <div class="profile-img-wrap">
-                            <img src="images/profile.jpg" alt="Mar June Gabon">
+                            <img src="images/profile.jpg" alt="Mar June Gabon - IT Developer and AI Specialist">
                         </div>
                         <div class="stat-card" style="top:-10px;right:-24px;">
                             <div style="color:#4ade80;font-weight:700;font-size:1.2rem;font-family:'Space Grotesk',sans-serif;line-height:1;">6+</div>
@@ -254,6 +317,32 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Certifications & Eligibilities -->
+                    <div class="section-label justify-start" style="margin-bottom:0.75rem;">Eligibilities & Certifications</div>
+                    <div class="space-y-2 mb-8">
+                        <div style="display:flex;align-items:center;gap:0.75rem;background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.18);border-radius:8px;padding:0.75rem 1rem;">
+                            <div style="width:32px;height:32px;border-radius:7px;background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Civil Service Exam (CSE) Passer</p>
+                                <p style="font-size:0.7rem;color:#4ade80;font-family:'JetBrains Mono',monospace;">Professional Level · Philippine Civil Service Commission</p>
+                            </div>
+                            <span style="margin-left:auto;font-size:0.6rem;color:#4ade80;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);padding:0.15rem 0.5rem;border-radius:3px;font-family:'JetBrains Mono',monospace;white-space:nowrap;">CSC</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.75rem;background:rgba(6,182,212,0.05);border:1px solid rgba(6,182,212,0.18);border-radius:8px;padding:0.75rem 1rem;">
+                            <div style="width:32px;height:32px;border-radius:7px;background:linear-gradient(135deg,rgba(6,182,212,0.18),rgba(34,197,94,0.08));border:1px solid rgba(6,182,212,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">ICT Diagnostic Exam Passer</p>
+                                <p style="font-size:0.7rem;color:#22d3ee;font-family:'JetBrains Mono',monospace;">Information & Communications Technology</p>
+                            </div>
+                            <span style="margin-left:auto;font-size:0.6rem;color:#22d3ee;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.25);padding:0.15rem 0.5rem;border-radius:3px;font-family:'JetBrains Mono',monospace;white-space:nowrap;">ICT</span>
+                        </div>
+                    </div>
+
                     <div class="grid grid-cols-3 gap-4 mb-8">
                         <div style="text-align:center;padding:1.25rem 0.75rem;border:1px solid rgba(34,197,94,0.15);border-radius:8px;background:rgba(34,197,94,0.04);">
                             <div style="font-size:2rem;font-weight:800;color:#4ade80;font-family:'Space Grotesk',sans-serif;line-height:1;">6+</div>
@@ -560,6 +649,42 @@
         </div>
     </section>
 
+    <!-- ══════════════════ AWARDS & RECOGNITION ══════════════════ -->
+    <section id="awards" class="py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="section-label justify-center">Recognition</div>
+                <h2 class="section-title">Awards & <span style="color:#4ade80;">Certifications</span></h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="award-card corner-accent" data-aos="fade-up">
+                    <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-base text-white">Civil Service Exam Passer</h3>
+                    <p class="text-slate-500 text-xs mt-1">Professional Level · Philippine CSC</p>
+                </div>
+                <div class="award-card corner-accent" data-aos="fade-up" data-aos-delay="100">
+                    <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(34,197,94,0.08));border:1px solid rgba(6,182,212,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-base text-white">ICT Diagnostic Exam Passer</h3>
+                    <p class="text-slate-500 text-xs mt-1">Information & Communications Technology</p>
+                </div>
+                <div class="award-card corner-accent" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/cert-placeholder.svg" alt="Certificate placeholder" class="award-img" loading="lazy">
+                    <h3 class="font-display font-bold text-base text-white">Award / Certification</h3>
+                    <p class="text-slate-500 text-xs mt-1">Add your award details here</p>
+                </div>
+                <div class="award-card corner-accent" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/cert-placeholder.svg" alt="Certificate placeholder" class="award-img" loading="lazy">
+                    <h3 class="font-display font-bold text-base text-white">Award / Certification</h3>
+                    <p class="text-slate-500 text-xs mt-1">Add your award details here</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ══════════════════ PROJECTS ══════════════════ -->
     <section id="projects" class="py-28 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -573,7 +698,7 @@
                 <!-- AI Learning System -->
                 <div class="project-card group" data-aos="fade-up" data-aos-delay="0">
                     <div class="project-thumb-wrap">
-                        <img src="images/thumb/ai4lifelonglearning.png" alt="AI4LifeLongLearning" class="project-thumb">
+                        <img src="images/thumb/ai4lifelonglearning.png" alt="AI for Lifelong Learning system interface" class="project-thumb" loading="lazy">
                         <div style="position:absolute;top:10px;left:10px;z-index:2;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(34,197,94,0.92);color:#020c06;padding:0.18rem 0.55rem;border-radius:2px;font-family:'JetBrains Mono',monospace;">AI / ML</div>
                     </div>
                     <div class="p-5">
@@ -601,7 +726,7 @@
                 <!-- Mobile Game -->
                 <div class="project-card group" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-thumb-wrap">
-                        <img src="images/thumb/mobile.jpg" alt="Educational Mobile Game" class="project-thumb" style="object-position:center;">
+                        <img src="images/thumb/mobile.jpg" alt="Educational mobile game application screenshot" class="project-thumb" style="object-position:center;" loading="lazy">
                         <div style="position:absolute;top:10px;left:10px;z-index:2;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(6,182,212,0.92);color:#020c06;padding:0.18rem 0.55rem;border-radius:2px;font-family:'JetBrains Mono',monospace;">Mobile</div>
                     </div>
                     <div class="p-5">
@@ -617,7 +742,7 @@
                 <!-- Portfolio Sites -->
                 <div class="project-card group" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-thumb-wrap">
-                        <img src="images/thumb/portfolio.png" alt="Personal Portfolio Sites" class="project-thumb">
+                        <img src="images/thumb/portfolio.png" alt="Personal portfolio website design screenshot" class="project-thumb" loading="lazy">
                         <div style="position:absolute;top:10px;left:10px;z-index:2;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(34,197,94,0.92);color:#020c06;padding:0.18rem 0.55rem;border-radius:2px;font-family:'JetBrains Mono',monospace;">Web</div>
                     </div>
                     <div class="p-5">
@@ -637,6 +762,9 @@
 
                 <!-- E-Commerce -->
                 <div class="project-card group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="project-thumb-wrap">
+                        <img src="images/thumb/ecommerce.svg" alt="E-commerce website system placeholder" class="project-thumb" loading="lazy">
+                    </div>
                     <div class="p-5">
                         <div class="flex items-center gap-3 mb-3">
                             <div style="width:38px;height:38px;border-radius:7px;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -651,6 +779,9 @@
 
                 <!-- Time Monitoring -->
                 <div class="project-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-thumb-wrap">
+                        <img src="images/thumb/timemonitor.svg" alt="Time monitoring system placeholder" class="project-thumb" loading="lazy">
+                    </div>
                     <div class="p-5">
                         <div class="flex items-center gap-3 mb-3">
                             <div style="width:38px;height:38px;border-radius:7px;background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(34,197,94,0.08));border:1px solid rgba(6,182,212,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -665,6 +796,9 @@
 
                 <!-- IoT -->
                 <div class="project-card group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-thumb-wrap">
+                        <img src="images/thumb/iot.svg" alt="IoT project placeholder" class="project-thumb" loading="lazy">
+                    </div>
                     <div class="p-5">
                         <div class="flex items-center gap-3 mb-3">
                             <div style="width:38px;height:38px;border-radius:7px;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(251,146,60,0.08));border:1px solid rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -679,6 +813,9 @@
 
                 <!-- Android / Firebase -->
                 <div class="project-card group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-thumb-wrap">
+                        <img src="images/thumb/android.svg" alt="Android Firebase project placeholder" class="project-thumb" loading="lazy">
+                    </div>
                     <div class="p-5">
                         <div class="flex items-center gap-3 mb-3">
                             <div style="width:38px;height:38px;border-radius:7px;background:linear-gradient(135deg,rgba(251,146,60,0.15),rgba(239,68,68,0.08));border:1px solid rgba(251,146,60,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -702,6 +839,127 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════ TESTIMONIALS ══════════════════ -->
+    <section id="testimonials" class="py-28 relative z-10" style="background:rgba(0,6,2,0.7);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-label justify-center">Testimonials</div>
+                <h2 class="section-title">What People <span style="color:#4ade80;">Say</span></h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="images/thumb/client1.png" alt="Dr. Marife Matic Mustacisa" class="w-12 h-12 rounded-full" loading="lazy">
+                        <div>
+                            <p class="text-white font-semibold text-sm">Dr. Marife Matic Mustacisa</p>
+                            <p class="text-slate-500 text-xs">Client — AI4LifeLongLearning System</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">"Mar June delivered an outstanding AI-powered platform that transformed how we conduct needs assessments and training design for our extension programs. The system's automation and intelligent analysis capabilities have significantly improved our workflow at CeLL."</p>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="images/avatar2.svg" alt="Client avatar" class="w-12 h-12 rounded-full" loading="lazy">
+                        <div>
+                            <p class="text-white font-semibold text-sm">Client Name</p>
+                            <p class="text-slate-500 text-xs">Role / Company</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">"Placeholder testimonial. Add a genuine review from a client, colleague, or student here."</p>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="images/avatar3.svg" alt="Client avatar" class="w-12 h-12 rounded-full" loading="lazy">
+                        <div>
+                            <p class="text-white font-semibold text-sm">Client Name</p>
+                            <p class="text-slate-500 text-xs">Role / Company</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">"Placeholder testimonial. Add a genuine review from a client, colleague, or student here."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════ TRUSTED BY ══════════════════ -->
+    <section class="py-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-slate-600 text-xs uppercase tracking-widest mb-8 font-mono">Trusted By</p>
+            <div class="trusted-logos">
+                <div class="trusted-logo-item">
+                    <img src="images/brand.png" alt="Samar State University" class="h-8" loading="lazy">
+                    <span class="text-slate-500 font-mono text-xs">Samar State University</span>
+                </div>
+                <div class="trusted-logo-item">
+                    <span class="text-slate-500 font-mono text-xs">CeLL — Research & Extension</span>
+                </div>
+                <div class="trusted-logo-item">
+                    <span class="text-slate-500 font-mono text-xs">ISLA-LEtS CARE Project</span>
+                </div>
+                <div class="trusted-logo-item">
+                    <span class="text-slate-500 font-mono text-xs">Research & Innovation Center</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════ FAQ ══════════════════ -->
+    <section id="faq" class="py-28 relative z-10">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-label justify-center">FAQ</div>
+                <h2 class="section-title">Frequently Asked <span style="color:#4ade80;">Questions</span></h2>
+            </div>
+            <div class="space-y-4">
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>What services do you offer?</span>
+                        <svg class="w-4 h-4 text-green-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>I build professional websites, AI-powered systems, mobile apps, web applications, and provide IT consultation, research support, and tutoring services. Check out the <a href="services.html" class="text-green-400 hover:underline">Services page</a> for full details and pricing.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>Do you accept remote or freelance projects?</span>
+                        <svg class="w-4 h-4 text-green-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. I am available for both local projects in Samar and remote work nationwide. I have been freelancing since 2020 alongside my work at Samar State University.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>What technologies do you specialize in?</span>
+                        <svg class="w-4 h-4 text-green-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>My core stack includes PHP, JavaScript, MySQL, HTML/CSS, Bootstrap, and Firebase. I also work with AI APIs (OpenAI), Android development, ESP32/Arduino IoT, and various design tools.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>How do we start a project together?</span>
+                        <svg class="w-4 h-4 text-green-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Simply reach out through the <a href="#contact" class="text-green-400 hover:underline">contact form</a> or email me directly. We'll discuss your requirements, timeline, and budget. I typically start with a discovery call or meeting.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>Can you help with research and documentation?</span>
+                        <svg class="w-4 h-4 text-green-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. I provide technical writing, data analysis support (JASP, Excel), survey design, needs assessment, and instructional material development for institutions and research programs.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

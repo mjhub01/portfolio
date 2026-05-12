@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MJG Dev — All-In-One Digital Services for Local Businesses & Institutions</title>
+    <meta name="description" content="Professional websites, AI-powered systems, mobile apps, and digital solutions — built for local businesses, schools, and organizations in the Philippines.">
+    <meta name="author" content="Mar June Gabon">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#020c06">
+    <link rel="canonical" href="https://mjhub01.github.io/portfolio/services.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MJG Dev — All-In-One Digital Services for Local Businesses & Institutions">
+    <meta property="og:description" content="Professional websites, AI-powered systems, mobile apps, and digital solutions — built for local businesses, schools, and organizations in the Philippines.">
+    <meta property="og:image" content="https://mjhub01.github.io/portfolio/images/brand.png">
+    <meta property="og:url" content="https://mjhub01.github.io/portfolio/services.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MJG Dev — All-In-One Digital Services for Local Businesses & Institutions">
+    <meta name="twitter:description" content="Professional websites, AI-powered systems, mobile apps, and digital solutions in the Philippines.">
+    <meta name="twitter:image" content="https://mjhub01.github.io/portfolio/images/brand.png">
+    <link rel="icon" href="images/brand.png" type="image/png">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            background: #020c06;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(34,197,94,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34,197,94,0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Gradient orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(34,197,94,0.12), transparent); top: -120px; right: -100px; }
+        .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(6,182,212,0.1), transparent); bottom: 10%; left: -80px; }
+
+        /* Navbar */
+        nav {
+            background: rgba(2,12,6,0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(34,197,94,0.1);
+        }
+
+        /* Hero gradient text */
+        .hero-gradient {
+            background: linear-gradient(135deg, #4ade80 0%, #22d3ee 50%, #4ade80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glow text */
+        .glow-green { text-shadow: 0 0 20px rgba(74,222,128,0.5); }
+
+        /* Cards */
+        .service-card {
+            background: rgba(2,12,6,0.7);
+            border: 1px solid rgba(34,197,94,0.15);
+            border-radius: 14px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(34,197,94,0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .service-card:hover {
+            border-color: rgba(34,197,94,0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(34,197,94,0.08);
+        }
+        .service-card:hover::before { opacity: 1; }
+
+        /* Pricing card */
+        .pricing-card {
+            background: rgba(2,12,6,0.8);
+            border: 1px solid rgba(34,197,94,0.15);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-card.featured {
+            border-color: rgba(34,197,94,0.5);
+            box-shadow: 0 0 40px rgba(34,197,94,0.12);
+        }
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 40px rgba(34,197,94,0.1);
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #475569;
+            border: 1px solid rgba(34,197,94,0.2);
+            background: rgba(34,197,94,0.05);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+        }
+        .badge .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse-dot 1.8s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        /* Step connector */
+        .step-line {
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 0px);
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(34,197,94,0.4), transparent);
+        }
+
+        /* Btn */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #16a34a, #059669);
+            color: #f0fdf4;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            transition: all 0.25s;
+            font-size: 0.9rem;
+            border: 1px solid rgba(74,222,128,0.3);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #15803d, #047857);
+            box-shadow: 0 0 30px rgba(34,197,94,0.35);
+            transform: translateY(-1px);
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #4ade80;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(74,222,128,0.35);
+            transition: all 0.25s;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-outline:hover {
+            background: rgba(34,197,94,0.08);
+            border-color: rgba(74,222,128,0.6);
+        }
+
+        /* Icon box */
+        .icon-box {
+            width: 52px; height: 52px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Check list */
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-bottom: 0.7rem;
+        }
+        .check-item svg { flex-shrink: 0; margin-top: 1px; }
+
+        /* Divider */
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(34,197,94,0.2), transparent);
+            margin: 0;
+        }
+
+        /* Section label */
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #4ade80;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 18px; height: 1px;
+            background: #4ade80;
+        }
+
+        /* Testimonial */
+        .testimonial-card {
+            background: rgba(2,12,6,0.7);
+            border: 1px solid rgba(34,197,94,0.12);
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border: 1px solid rgba(34,197,94,0.12);
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(2,12,6,0.6);
+        }
+        .faq-btn {
+            width: 100%;
+            text-align: left;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 1.5rem 1.25rem;
+            color: #64748b;
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+        .faq-answer.open { display: block; }
+
+        /* Scroll animation */
+        [data-aos] {
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        [data-aos="fade-up"] { transform: translateY(28px); }
+        [data-aos="fade-left"] { transform: translateX(28px); }
+        [data-aos="fade-right"] { transform: translateX(-28px); }
+        [data-aos].aos-animate { opacity: 1; transform: translate(0); }
+        [data-aos-delay="100"] { transition-delay: 0.1s; }
+        [data-aos-delay="150"] { transition-delay: 0.15s; }
+        [data-aos-delay="200"] { transition-delay: 0.2s; }
+        [data-aos-delay="300"] { transition-delay: 0.3s; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #020c06; }
+        ::-webkit-scrollbar-thumb { background: rgba(34,197,94,0.3); border-radius: 3px; }
+
+        /* Service tabs */
+        .service-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .service-tab {
+            padding: 0.5rem 1.1rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid rgba(34,197,94,0.2);
+            color: #94a3b8;
+            background: transparent;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .service-tab.active {
+            background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(6,182,212,0.1));
+            color: #4ade80;
+            border-color: rgba(34,197,94,0.4);
+        }
+        .service-tab:hover:not(.active) {
+            color: #f1f5f9;
+            border-color: rgba(148,163,184,0.3);
+        }
+        .pricing-panel { display: none; }
+        .pricing-panel.active { display: block; }
+    </style>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MJG Dev",
+      "url": "https://mjhub01.github.io/portfolio/services.html",
+      "logo": "https://mjhub01.github.io/portfolio/images/brand.png",
+      "description": "Professional websites, AI-powered systems, mobile apps, and digital solutions — built for local businesses, schools, and organizations in the Philippines.",
+      "founder": {
+        "@type": "Person",
+        "name": "Mar June Gabon"
+      },
+      "areaServed": "Philippines",
+      "serviceType": "Web Development, AI Systems, Mobile Apps, IT Consulting"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Background orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- ══════════ NAVBAR ══════════ -->
+    <nav class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="images/brand.png" alt="MJG Dev" class="h-8 w-auto">
+                <span class="font-display font-bold text-white text-sm">MJG<span style="color:#4ade80;">Dev</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="index.html" class="text-slate-400 hover:text-green-400 transition-colors text-sm">Portfolio</a>
+                <a href="#services" class="text-slate-400 hover:text-green-400 transition-colors text-sm">Services</a>
+                <a href="#how-it-works" class="text-slate-400 hover:text-green-400 transition-colors text-sm">How It Works</a>
+                <a href="#pricing" class="text-slate-400 hover:text-green-400 transition-colors text-sm">Pricing</a>
+                <a href="#faq" class="text-slate-400 hover:text-green-400 transition-colors text-sm">FAQ</a>
+                <a href="index.html#contact" class="btn-primary" style="padding:0.5rem 1.25rem;font-size:0.82rem;">Get Started</a>
+            </div>
+            <!-- Mobile menu btn -->
+            <button id="mobileBtn" class="md:hidden text-slate-400 hover:text-green-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-green-900/30 px-4 py-4 space-y-3">
+            <a href="index.html" class="block text-slate-400 text-sm py-1" style="color:#22d3ee;">← Portfolio</a>
+            <a href="#services" class="block text-slate-400 text-sm py-1">Services</a>
+            <a href="#how-it-works" class="block text-slate-400 text-sm py-1">How It Works</a>
+            <a href="#pricing" class="block text-slate-400 text-sm py-1">Pricing</a>
+            <a href="#faq" class="block text-slate-400 text-sm py-1">FAQ</a>
+            <a href="index.html#contact" class="btn-primary inline-block text-center" style="padding:0.6rem 1.25rem;font-size:0.82rem;">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-20 z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+
+            <div class="flex justify-center mb-6" data-aos="fade-up">
+                <div class="badge">
+                    <span class="dot"></span>
+                    Available for Projects — Philippines & Remote
+                </div>
+            </div>
+
+            <h1 class="font-display font-black mb-6 leading-tight" style="font-size:clamp(2.4rem,6vw,4rem);" data-aos="fade-up" data-aos-delay="100">
+                Your Business Deserves<br>
+                <span class="hero-gradient">A Smarter Digital Presence</span>
+            </h1>
+
+            <p class="text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto" style="font-size:1rem;" data-aos="fade-up" data-aos-delay="200">
+                I build professional websites, AI-powered platforms, mobile apps, and automated digital systems — tailored for local businesses, schools, and organizations. <strong class="text-slate-300">No bloated agencies. No hidden fees. Just results.</strong>
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-14" data-aos="fade-up" data-aos-delay="300">
+                <a href="#pricing" class="btn-primary">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    View Packages
+                </a>
+                <a href="index.html#contact" class="btn-outline">
+                    Talk to Me First →
+                </a>
+            </div>
+
+            <!-- Social proof bar -->
+            <div class="flex flex-wrap justify-center gap-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div>
+                    <p class="font-display font-bold text-2xl" style="color:#4ade80;">5+</p>
+                    <p class="text-slate-500 text-xs font-mono uppercase tracking-wider">Yrs Experience</p>
+                </div>
+                <div style="width:1px;background:rgba(34,197,94,0.2);"></div>
+                <div>
+                    <p class="font-display font-bold text-2xl" style="color:#4ade80;">20+</p>
+                    <p class="text-slate-500 text-xs font-mono uppercase tracking-wider">Projects Built</p>
+                </div>
+                <div style="width:1px;background:rgba(34,197,94,0.2);"></div>
+                <div>
+                    <p class="font-display font-bold text-2xl" style="color:#4ade80;">AI</p>
+                    <p class="text-slate-500 text-xs font-mono uppercase tracking-wider">Powered Systems</p>
+                </div>
+                <div style="width:1px;background:rgba(34,197,94,0.2);"></div>
+                <div>
+                    <p class="font-display font-bold text-2xl" style="color:#4ade80;">PH</p>
+                    <p class="text-slate-500 text-xs font-mono uppercase tracking-wider">Based Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ SERVICES ══════════ -->
+    <section id="services" class="py-24 relative z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-label justify-center">What I Offer</div>
+                <h2 class="font-display font-black text-3xl md:text-4xl text-white">
+                    Beyond Web Dev — <span style="color:#4ade80;">Full Digital Solutions</span>
+                </h2>
+                <p class="text-slate-500 mt-3 max-w-xl mx-auto text-sm">From websites and AI systems to IoT prototypes, training, research support, and IT consultation — one developer, many solutions.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Web Development -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.25);">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">Professional Websites</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Custom-built websites for businesses, portfolios, schools, and organizations — responsive, fast, and SEO-ready.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Landing pages & company sites</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>E-commerce & online stores</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>School & institutional portals</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>GitHub Pages hosting included</div>
+                    </div>
+                </div>
+
+                <!-- AI Systems -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(34,197,94,0.08));border:1px solid rgba(6,182,212,0.25);">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">AI-Powered Systems</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Intelligent platforms that automate workflows, generate content, and analyze data using OpenAI API and real-time processing.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>OpenAI API integration</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Automated report & content generation</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>CSV/data upload & analysis</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Real-time AJAX AI responses</div>
+                    </div>
+                </div>
+
+                <!-- Web Apps & Systems -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(251,146,60,0.15),rgba(34,197,94,0.08));border:1px solid rgba(251,146,60,0.25);">
+                        <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">Web Apps & Systems</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Custom management systems with databases, user authentication, and admin dashboards — built with PHP, MySQL, and Firebase.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Inventory & record management</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Time monitoring & scheduling</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>User roles & access control</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Firebase & MySQL backends</div>
+                    </div>
+                </div>
+
+                <!-- Mobile Apps -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(236,72,153,0.08));border:1px solid rgba(168,85,247,0.25);">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">Mobile Applications</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Android apps for education, business tools, and interactive experiences — integrated with Firebase for real-time cloud data.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Android app development</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Educational & quiz-based apps</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Firebase Authentication & Firestore</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Google Sign-In integration</div>
+                    </div>
+                </div>
+
+                <!-- Design & Branding -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(250,204,21,0.15),rgba(251,146,60,0.08));border:1px solid rgba(250,204,21,0.25);">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">Design & Branding</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Visual content, UI design, and brand materials — from social media graphics to complete digital identity packages.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>UI/UX design & mockups</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Social media graphics & captions</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Canva, Photoshop, Affinity</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Video editing (CapCut, Wondershare)</div>
+                    </div>
+                </div>
+
+                <!-- Research & Documentation -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.2);">
+                        <svg class="w-6 h-6 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">Research & Documentation</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Technical writing, data analysis support, and instructional materials — for institutions, research programs, and extension services.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Reports, articles & feature writing</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Data cleaning & JASP analysis</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Syllabi, rubrics & learning packets</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Needs assessment & thematic analysis</div>
+                    </div>
+                </div>
+
+                <!-- IoT / Hardware -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(251,146,60,0.08));border:1px solid rgba(34,197,94,0.25);">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">IoT & Hardware Projects</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Embedded systems and IoT prototypes using ESP32 and Arduino Uno — sensor integration, automation, and hardware-software interfacing.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>ESP32 & Arduino Uno programming</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Sensor integration & automation</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Hardware-software interfacing</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Prototype development & testing</div>
+                    </div>
+                </div>
+
+                <!-- IT Training & Tutoring -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(6,182,212,0.08));border:1px solid rgba(168,85,247,0.25);">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">IT Training & Tutoring</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">One-on-one or group sessions for students, professionals, and organizations — covering programming, web development, and IT fundamentals.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Programming fundamentals (Java, Python, C++)</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Web development (HTML, CSS, JS, PHP)</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Database management & SQL</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Online or face-to-face sessions</div>
+                    </div>
+                </div>
+
+                <!-- Data Analysis -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(34,197,94,0.08));border:1px solid rgba(6,182,212,0.25);">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">Data Analysis & Statistics</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Quantitative and qualitative data processing for research, surveys, and institutional reports — using JASP, Excel, and CSV tools.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Descriptive & inferential statistics</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Survey & needs assessment analysis</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>JASP, Excel & CSV data preparation</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Thematic & qualitative coding</div>
+                    </div>
+                </div>
+
+                <!-- IT Consultation -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(250,204,21,0.15),rgba(34,197,94,0.08));border:1px solid rgba(250,204,21,0.25);">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">IT Consultation</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Strategic technology advice for businesses, schools, and organizations — from system planning and tech stack selection to troubleshooting and cloud setup.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>System planning & architecture advice</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Tech stack & tool recommendations</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Troubleshooting & IT support</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Cloud & hosting setup guidance</div>
+                    </div>
+                </div>
+
+                <!-- Content Creation -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box" style="background:linear-gradient(135deg,rgba(236,72,153,0.15),rgba(168,85,247,0.08));border:1px solid rgba(236,72,153,0.25);">
+                        <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2">Content Creation</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">Written and visual content for digital platforms, institutional communications, and social media — crafted for clarity and engagement.</p>
+                    <div class="space-y-1">
+                        <div class="check-item"><svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>News & feature articles</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Social media captions & graphics</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Video editing (CapCut, Wondershare)</div>
+                        <div class="check-item"><svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Program flows & event materials</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ HOW IT WORKS ══════════ -->
+    <section id="how-it-works" class="py-24 relative z-10" style="background:rgba(0,6,2,0.7);">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-label justify-center">Process</div>
+                <h2 class="font-display font-black text-3xl md:text-4xl text-white">How It Works</h2>
+                <p class="text-slate-500 mt-3 max-w-xl mx-auto text-sm">Simple, transparent, and collaborative — from your first message to launch day.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:'JetBrains Mono',monospace;font-weight:700;color:#4ade80;font-size:1.1rem;">01</div>
+                    <h3 class="font-display font-bold text-white mb-2">Tell Me Your Needs</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Send me a message via email, Facebook, or the contact form. We'll discuss your goals, timeline, and budget.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:'JetBrains Mono',monospace;font-weight:700;color:#4ade80;font-size:1.1rem;">02</div>
+                    <h3 class="font-display font-bold text-white mb-2">Get a Custom Plan</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">I'll prepare a tailored proposal — scope of work, features, and transparent pricing. No surprises.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:'JetBrains Mono',monospace;font-weight:700;color:#4ade80;font-size:1.1rem;">03</div>
+                    <h3 class="font-display font-bold text-white mb-2">I Build & Update You</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Development begins with regular progress updates. You can request revisions at any milestone.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:'JetBrains Mono',monospace;font-weight:700;color:#4ade80;font-size:1.1rem;">04</div>
+                    <h3 class="font-display font-bold text-white mb-2">Launch & Support</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Your project goes live. I provide handover documentation and post-launch support to keep things running.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ PRICING ══════════ -->
+    <section id="pricing" class="py-24 relative z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-label justify-center">Packages</div>
+                <h2 class="font-display font-black text-3xl md:text-4xl text-white">Service-Based <span style="color:#4ade80;">Pricing</span></h2>
+                <p class="text-slate-500 mt-3 max-w-xl mx-auto text-sm">Select a service to see tailored packages. All prices in Philippine Peso.</p>
+            </div>
+
+            <div class="service-tabs">
+                <button class="service-tab active" onclick="switchService('web', this)">Websites & Systems</button>
+                <button class="service-tab" onclick="switchService('mobile', this)">Mobile & IoT</button>
+                <button class="service-tab" onclick="switchService('ai', this)">AI & Data</button>
+                <button class="service-tab" onclick="switchService('training', this)">Training & IT Support</button>
+                <button class="service-tab" onclick="switchService('content', this)">Content & Design</button>
+            </div>
+
+            <!-- Websites & Systems -->
+            <div class="pricing-panel active" id="panel-web">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#475569;margin-bottom:0.75rem;">Starter</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱3,500<span class="text-slate-500 text-base font-normal"> / project</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Simple landing pages, portfolios, and personal sites.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Up to 5 responsive pages</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Contact form integration</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>GitHub Pages hosting setup</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Basic SEO optimization</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>2 revision rounds</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Backend / database</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                        <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-size:0.6rem;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:linear-gradient(135deg,#16a34a,#059669);color:#f0fdf4;padding:0.2rem 0.9rem;border-radius:0 0 6px 6px;">Most Popular</div>
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#4ade80;margin-bottom:0.75rem;margin-top:0.75rem;">Professional</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱15,000<span class="text-slate-500 text-base font-normal"> / project</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Web systems with backend, admin panel, and database.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Up to 10 pages / modules</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>PHP + MySQL backend</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>User login & admin dashboard</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Database management</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>3 revisions + 1-week support</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Mobile / AI integration</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-primary w-full justify-center">Get Started</a>
+                    </div>
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#fb923c;margin-bottom:0.75rem;">Business</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱50,000<span class="text-slate-500 text-base font-normal"> / project</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Full institutional systems with advanced features.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Everything in Professional</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Multi-role user management</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Reports, exports & analytics</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Firebase / cloud deployment</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>5 revisions + 2-week support</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>AI-powered features</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center" style="border-color:rgba(251,146,60,0.4);color:#fb923c;">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile & IoT -->
+            <div class="pricing-panel" id="panel-mobile">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#475569;margin-bottom:0.75rem;">Prototype</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱5,000<span class="text-slate-500 text-base font-normal"> / project</span></p>
+                        <p class="text-slate-500 text-sm mb-6">IoT prototype or basic sensor automation.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>ESP32 / Arduino Uno setup</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Sensor integration & wiring</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Basic automation logic</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Documentation & wiring diagram</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>2 revision rounds</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Cloud / mobile connectivity</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                        <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-size:0.6rem;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:linear-gradient(135deg,#16a34a,#059669);color:#f0fdf4;padding:0.2rem 0.9rem;border-radius:0 0 6px 6px;">Most Popular</div>
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#4ade80;margin-bottom:0.75rem;margin-top:0.75rem;">Professional</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱15,000<span class="text-slate-500 text-base font-normal"> / project</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Android app with Firebase backend and user auth.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Full Android app development</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Firebase Authentication & Firestore</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Real-time data sync</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Google Sign-In integration</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>3 revisions + 1-week support</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Web dashboard included</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-primary w-full justify-center">Get Started</a>
+                    </div>
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#fb923c;margin-bottom:0.75rem;">Business</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱50,000<span class="text-slate-500 text-base font-normal"> / project</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Complete IoT + mobile + web ecosystem.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Everything in Professional</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>IoT hardware-software bridge</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Web dashboard for IoT data</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Cloud deployment & monitoring</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>5 revisions + 2-week support</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>AI processing layer</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center" style="border-color:rgba(251,146,60,0.4);color:#fb923c;">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI & Data -->
+            <div class="pricing-panel" id="panel-ai">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#475569;margin-bottom:0.75rem;">Data Report</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱3,500<span class="text-slate-500 text-base font-normal"> / report</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Statistical analysis for research or surveys.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Descriptive & inferential stats</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>JASP / Excel analysis</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Charts, tables & visual summaries</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Written interpretation</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>2 revision rounds</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>AI-powered generation</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                        <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-size:0.6rem;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:linear-gradient(135deg,#16a34a,#059669);color:#f0fdf4;padding:0.2rem 0.9rem;border-radius:0 0 6px 6px;">Most Popular</div>
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#4ade80;margin-bottom:0.75rem;margin-top:0.75rem;">AI System</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱15,000<span class="text-slate-500 text-base font-normal"> / project</span></p>
+                        <p class="text-slate-500 text-sm mb-6">AI-powered platform with OpenAI integration.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>OpenAI API integration</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Automated content generation</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>CSV upload & data analysis</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Multilingual output (EN/FIL/WAR)</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>3 revisions + 1-week support</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Custom model training</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-primary w-full justify-center">Get Started</a>
+                    </div>
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#fb923c;margin-bottom:0.75rem;">Enterprise AI</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">Custom<span class="text-slate-500 text-base font-normal"> quote</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Large-scale AI with full research & documentation.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Everything in AI System</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Full research & data suite</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Thematic & qualitative analysis</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Needs assessment & reporting</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Extended support & documentation</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>IoT / mobile integration</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center" style="border-color:rgba(251,146,60,0.4);color:#fb923c;">Request a Quote</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training & IT Support -->
+            <div class="pricing-panel" id="panel-training">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#475569;margin-bottom:0.75rem;">Single Session</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱1,000<span class="text-slate-500 text-base font-normal"> / session</span></p>
+                        <p class="text-slate-500 text-sm mb-6">One-on-one tutoring or IT consultation (2 hours).</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>2-hour focused session</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Programming, web, or database topic</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Online or face-to-face</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Exercises & reference materials</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Follow-up Q&A (3 days)</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Group / workshop setting</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center">Book Session</a>
+                    </div>
+                    <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                        <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-size:0.6rem;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:linear-gradient(135deg,#16a34a,#059669);color:#f0fdf4;padding:0.2rem 0.9rem;border-radius:0 0 6px 6px;">Most Popular</div>
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#4ade80;margin-bottom:0.75rem;margin-top:0.75rem;">Training Package</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱5,000<span class="text-slate-500 text-base font-normal"> / package</span></p>
+                        <p class="text-slate-500 text-sm mb-6">5-session training with progress tracking & exercises.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>5 sessions (2 hrs each)</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom curriculum & exercises</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Progress tracking & feedback</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Reference materials & code samples</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Online or face-to-face</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Group workshop included</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-primary w-full justify-center">Book Package</a>
+                    </div>
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#fb923c;margin-bottom:0.75rem;">Workshop / Retainer</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱15,000<span class="text-slate-500 text-base font-normal"> / package</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Organization workshop or monthly IT consultation.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Group workshop (up to 15 pax)</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom curriculum & materials</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Full-day or multi-day schedule</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>IT consultation (up to 10 sessions)</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>System review & tech stack advice</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Development work included</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center" style="border-color:rgba(251,146,60,0.4);color:#fb923c;">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content & Design -->
+            <div class="pricing-panel" id="panel-content">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#475569;margin-bottom:0.75rem;">Social Pack</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱1,500<span class="text-slate-500 text-base font-normal"> / pack</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Graphics and captions for your social channels.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>10 custom graphics</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Matching captions & hashtags</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Canva source files</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>1 revision round</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Video editing</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Brand kit / logo</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                        <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-size:0.6rem;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:linear-gradient(135deg,#16a34a,#059669);color:#f0fdf4;padding:0.2rem 0.9rem;border-radius:0 0 6px 6px;">Most Popular</div>
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#4ade80;margin-bottom:0.75rem;margin-top:0.75rem;">Brand Kit</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱5,000<span class="text-slate-500 text-base font-normal"> / kit</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Complete digital branding package.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Logo concepts (3 variants)</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Color palette & typography</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Social media templates</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Basic brand guide document</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>3 revision rounds</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Video production</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-primary w-full justify-center">Get Started</a>
+                    </div>
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                        <p style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;color:#fb923c;margin-bottom:0.75rem;">Full Creative</p>
+                        <p class="font-display font-black text-white mb-1" style="font-size:2.2rem;">₱15,000<span class="text-slate-500 text-base font-normal"> / project</span></p>
+                        <p class="text-slate-500 text-sm mb-6">Full content production for campaigns or events.</p>
+                        <hr class="divider mb-6">
+                        <div class="space-y-3 mb-8">
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Everything in Brand Kit</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>News & feature articles</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Video editing (CapCut / Wondershare)</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Program flows & event materials</div>
+                            <div class="check-item"><svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unlimited revisions (in scope)</div>
+                            <div class="check-item" style="color:#334155;"><svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>Photography / filming</div>
+                        </div>
+                        <a href="index.html#contact" class="btn-outline w-full justify-center" style="border-color:rgba(251,146,60,0.4);color:#fb923c;">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-slate-600 text-xs mt-8 font-mono" data-aos="fade-up">* Prices are starting rates. Final quotes depend on scope, complexity, and timeline. <a href="index.html#contact" class="text-green-500 hover:text-green-400">Contact me</a> for a free consultation.</p>
+        </div>
+    </section>
+    <!-- ══════════ WHY ME ══════════ -->
+    <section class="py-24 relative z-10" style="background:rgba(0,6,2,0.7);">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <div data-aos="fade-right">
+                    <div class="section-label justify-start">Why Choose Me</div>
+                    <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-6">
+                        Not Just a Developer —<br><span style="color:#4ade80;">A Strategic Partner</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        With 5+ years of experience spanning web development, AI systems, research technology, and education — I don't just write code. I understand your goals, your audience, and what it takes to deliver a system that actually works in the real world.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.12);border-radius:10px;padding:1.25rem;">
+                            <p class="font-bold text-white mb-1">Full-Stack</p>
+                            <p class="text-slate-500 text-xs">Frontend to backend — one developer handles it all.</p>
+                        </div>
+                        <div style="background:rgba(6,182,212,0.05);border:1px solid rgba(6,182,212,0.12);border-radius:10px;padding:1.25rem;">
+                            <p class="font-bold text-white mb-1">AI-Capable</p>
+                            <p class="text-slate-500 text-xs">OpenAI API integration for intelligent features.</p>
+                        </div>
+                        <div style="background:rgba(251,146,60,0.05);border:1px solid rgba(251,146,60,0.12);border-radius:10px;padding:1.25rem;">
+                            <p class="font-bold text-white mb-1">Research-Backed</p>
+                            <p class="text-slate-500 text-xs">Systems grounded in real institutional needs.</p>
+                        </div>
+                        <div style="background:rgba(168,85,247,0.05);border:1px solid rgba(168,85,247,0.12);border-radius:10px;padding:1.25rem;">
+                            <p class="font-bold text-white mb-1">Local & Remote</p>
+                            <p class="text-slate-500 text-xs">Based in Samar, PH — serving clients everywhere.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left" data-aos-delay="100">
+                    <div class="space-y-4">
+                        <div style="background:rgba(2,12,6,0.7);border:1px solid rgba(34,197,94,0.12);border-radius:12px;padding:1.5rem;">
+                            <div class="flex items-start gap-4">
+                                <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(6,182,212,0.08));border:1px solid rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white text-sm mb-1">Fast Turnaround</p>
+                                    <p class="text-slate-500 text-sm">Landing pages in 3–5 days. Systems in 2–4 weeks depending on scope.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="background:rgba(2,12,6,0.7);border:1px solid rgba(34,197,94,0.12);border-radius:12px;padding:1.5rem;">
+                            <div class="flex items-start gap-4">
+                                <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(34,197,94,0.08));border:1px solid rgba(6,182,212,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white text-sm mb-1">Clear Communication</p>
+                                    <p class="text-slate-500 text-sm">Regular updates, honest timelines, and no technical jargon overload.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="background:rgba(2,12,6,0.7);border:1px solid rgba(34,197,94,0.12);border-radius:12px;padding:1.5rem;">
+                            <div class="flex items-start gap-4">
+                                <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(251,146,60,0.15),rgba(34,197,94,0.08));border:1px solid rgba(251,146,60,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white text-sm mb-1">Real Systems, Real Use</p>
+                                    <p class="text-slate-500 text-sm">My projects are deployed and actively used — like ai4lifelonglearning.ssu.edu.ph.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ FAQ ══════════ -->
+    <section id="faq" class="py-24 relative z-10">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="section-label justify-center">FAQ</div>
+                <h2 class="font-display font-black text-3xl md:text-4xl text-white">Frequently Asked <span style="color:#4ade80;">Questions</span></h2>
+            </div>
+
+            <div class="space-y-3" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>Do you work with clients outside Samar / outside the Philippines?</span>
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">Yes! I work with clients remotely via email, Messenger, or video call. Payment can be arranged through GCash, PayPal, or bank transfer.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>How long does it take to build a website or system?</span>
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">Simple landing pages take 3–5 business days. Full web systems or AI platforms typically take 2–6 weeks depending on complexity, feature count, and your response time on feedback.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>What do you need from me to start?</span>
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">Just your idea and goals! I'll guide you through the rest — content, layout, features, and design preferences. If you have a logo or brand colors, those help too.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>Can you host the website for me?</span>
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">Yes. I can deploy to GitHub Pages (free), Firebase Hosting, or a paid hosting plan of your choice. I'll handle the deployment and walk you through managing it.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>Do you offer payment in installments?</span>
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">Yes! For projects above ₱5,000, we can split payment into a downpayment to start and the remaining balance upon delivery. Details are discussed during our initial consultation.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(this)">
+                        <span>What if I need changes after the project is done?</span>
+                        <svg class="w-4 h-4 text-green-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer">Minor text or content updates within the first week are free. Significant feature additions or redesigns after handover are billed separately at an hourly or fixed rate.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ CTA ══════════ -->
+    <section class="py-24 relative z-10" style="background:rgba(0,6,2,0.8);">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+
+            <div data-aos="fade-up">
+                <div class="badge justify-center mb-6" style="margin:0 auto 1.5rem;">
+                    <span class="dot"></span>
+                    Currently accepting projects
+                </div>
+                <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-4">
+                    Ready to Build Something <span style="color:#4ade80;">Great?</span>
+                </h2>
+                <p class="text-slate-400 text-sm leading-relaxed mb-10 max-w-xl mx-auto">
+                    Whether you have a clear vision or just an idea — let's talk. Free consultation, no commitment required.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="index.html#contact" class="btn-primary">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Send Me a Message
+                    </a>
+                    <a href="https://www.facebook.com/jrami0197/" target="_blank" class="btn-outline">
+                        Message on Facebook →
+                    </a>
+                </div>
+                <p class="text-slate-600 text-xs mt-6 font-mono">marjune.gabon07@gmail.com · Catbalogan City, Samar 6700</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer style="background:rgba(0,0,0,0.6);border-top:1px solid rgba(34,197,94,0.08);">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <img src="images/brand.png" alt="MJG Dev" class="h-6 w-auto" loading="lazy">
+                <span class="text-slate-600 text-xs font-mono">MJG Dev — <span id="year"></span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-slate-600 hover:text-green-400 text-xs transition-colors">Portfolio</a>
+                <a href="#services" class="text-slate-600 hover:text-green-400 text-xs transition-colors">Services</a>
+                <a href="#pricing" class="text-slate-600 hover:text-green-400 text-xs transition-colors">Pricing</a>
+                <a href="index.html#contact" class="text-slate-600 hover:text-green-400 text-xs transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu
+        document.getElementById('mobileBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobileMenu a').forEach(a => {
+            a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+        });
+
+        // Scroll animations
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('aos-animate'); obs.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
+        document.querySelectorAll('[data-aos]').forEach(el => obs.observe(el));
+
+        // FAQ toggle
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('svg');
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-btn svg').forEach(s => s.style.transform = '');
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+
+        // Service tab switching
+        function switchService(service, btn) {
+            document.querySelectorAll('.service-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.pricing-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('panel-' + service).classList.add('active');
+        }
+        // Active nav link
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section[id]').forEach(s => {
+                if (window.scrollY >= s.offsetTop - 120) current = s.id;
+            });
+            navLinks.forEach(l => {
+                l.style.color = l.getAttribute('href') === '#' + current ? '#4ade80' : '';
+            });
+        }, { passive: true });
+    </script>
+</body>
+</html>

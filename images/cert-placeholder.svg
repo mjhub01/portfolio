@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#020c06"/>
+  <rect x="10" y="10" width="280" height="180" rx="4" fill="none" stroke="rgba(34,197,94,0.2)" stroke-width="1"/>
+  <circle cx="150" cy="70" r="30" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+  <text x="150" y="78" text-anchor="middle" fill="#4ade80" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">CERT</text>
+  <text x="150" y="120" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="10">AWARD / CERTIFICATE</text>
+  <text x="150" y="145" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="8" opacity="0.6">Replace with actual image</text>
+</svg>

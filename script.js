@@ -122,3 +122,16 @@ window.addEventListener('scroll', () => {
         l.style.color = l.getAttribute('href') === '#' + current ? '#4ade80' : '';
     });
 }, { passive: true });
+
+// FAQ toggle
+function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const icon = btn.querySelector('svg');
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-btn svg').forEach(s => s.style.transform = '');
+    if (!isOpen) {
+        answer.classList.add('open');
+        icon.style.transform = 'rotate(180deg)';
+    }
+}
